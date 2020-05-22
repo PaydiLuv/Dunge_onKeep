@@ -1,0 +1,23 @@
+.bg{
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  /* The image used */
+  background-image: url("/assets/background-sanity.jpg");
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  -webkit-filter: blur(3px);
+}
+
+app-root{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

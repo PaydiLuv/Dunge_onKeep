@@ -1,0 +1,16 @@
+.spanem{
+  display: flex;
+  flex-direction: column;
+}
+.alignhalf{
+  display: flex;
+  align-content: start;
+}
+
+mat-form-field {
+  width : 53%;
+}
+
+mat-form-field span{
+  color : #64ffda;
+}
