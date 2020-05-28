@@ -7,10 +7,10 @@
   align-content: start;
 }
 
-mat-form-field {
-  width : 53%;
-}
-
 mat-form-field span{
   color : #64ffda;
+}
+
+mat-card-title{
+  color: #64ffda;
 }

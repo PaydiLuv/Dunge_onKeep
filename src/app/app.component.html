@@ -7,152 +7,218 @@
 <!--------------------------------------------------------------------------------------------------------------->
 
 <div>
-  <mat-card>Stats
+  <mat-card title="General Statistics"><mat-card-title>General Statistics</mat-card-title>
   <form class="example-form spanem">
+
     <!-- Strength -->
     <div class="alignhalf">
-      <mat-form-field class="example-full-width">
-        <mat-label>Strength</mat-label>
-        <span matPrefix>STR &nbsp;</span>
-        <input type="tel" matInput placeholder="3D6 * 5" >
-        <mat-icon matSuffix color="accent" (click)="$event">mode_edit</mat-icon>
-      </mat-form-field>
       <mat-list role="list" class="alignhalf">
-        <mat-list-item role="listitem">Hard:</mat-list-item>
-        <mat-list-item role="listitem">Extreme:</mat-list-item>
-        <button mat-icon-button  color="accent" aria-label="Example icon button with a vertical three dot icon" matTooltip="Info about the action">
-          <mat-icon>more_vert</mat-icon>
+        <mat-list-item role="Listitem">
+          <button mat-icon-button  color="accent" (click)="genstrength()">
+            <mat-icon>casino</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item role="Listitem">
+          <mat-form-field class="example-full-width">
+            <mat-label>Strength</mat-label>
+            <span matPrefix>STR &nbsp;</span>
+            <input type="number" matInput placeholder="3D6 * 5" value="{{str}}" >
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item role="listitem">Hard:{{ str / 2 | number:'1.0-0'}}</mat-list-item>
+        <mat-list-item role="listitem">Extreme:{{ str / 5 | number:'1.0-0'}}</mat-list-item>
+        <button mat-icon-button  color="accent" matTooltip="Info about the action" >
+          <mat-icon>help</mat-icon>
         </button>
       </mat-list>
     </div>
 
     <!-- Constitution -->
     <div class="alignhalf">
-    <mat-form-field class="example-full-width">
-      <mat-label>Constitution</mat-label>
-      <span matPrefix>CON &nbsp;</span>
-      <input type="tel" matInput placeholder="3D6 * 5">
-      <mat-icon matSuffix color="accent" (click)="$event">mode_edit</mat-icon>
-    </mat-form-field>
-    <mat-list role="list" class="alignhalf">
-      <mat-list-item role="listitem">Hard:</mat-list-item>
-      <mat-list-item role="listitem">Extreme:</mat-list-item>
-      <button mat-icon-button color="accent" aria-label="Example icon button with a vertical three dot icon" matTooltip="Info about the action">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </mat-list></div>
+      <mat-list role="list" class="alignhalf">
+        <mat-list-item role="Listitem">
+          <button mat-icon-button  color="accent" (click)="genconstitution()">
+            <mat-icon>casino</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item role="Listitem">
+          <mat-form-field class="example-full-width">
+            <mat-label>Constitution</mat-label>
+            <span matPrefix>CON &nbsp;</span>
+            <input type="number" matInput placeholder="3D6 * 5" value="{{con}}" >
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item role="listitem">Hard:{{ con / 2 | number:'1.0-0'}}</mat-list-item>
+        <mat-list-item role="listitem">Extreme:{{ con / 5 | number:'1.0-0'}}</mat-list-item>
+        <button mat-icon-button  color="accent" matTooltip="Info about the action" >
+          <mat-icon>help</mat-icon>
+        </button>
+      </mat-list>
+    </div>
 
     <!-- Size -->
     <div class="alignhalf">
-    <mat-form-field class="example-full-width">
-      <mat-label>Size</mat-label>
-      <span matPrefix>SIZ &nbsp;</span>
-      <input type="tel" matInput placeholder="(2D6 + 6) * 5">
-      <mat-icon matSuffix color="accent" (click)="$event">mode_edit</mat-icon>
-    </mat-form-field>
-    <mat-list role="list" class="alignhalf">
-      <mat-list-item role="listitem">Hard:</mat-list-item>
-      <mat-list-item role="listitem">Extreme:</mat-list-item>
-      <button mat-icon-button color="accent" aria-label="Example icon button with a vertical three dot icon" matTooltip="Info about the action">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </mat-list></div>
+      <mat-list role="list" class="alignhalf">
+        <mat-list-item role="Listitem">
+          <button mat-icon-button  color="accent" (click)="gensize()">
+            <mat-icon>casino</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item role="Listitem">
+          <mat-form-field class="example-full-width">
+            <mat-label>Size</mat-label>
+            <span matPrefix>SIZ &nbsp;</span>
+            <input type="number" matInput placeholder="(2D6 + 6) * 5" value="{{siz}}" >
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item role="listitem">Hard:{{ siz / 2 | number:'1.0-0'}}</mat-list-item>
+        <mat-list-item role="listitem">Extreme:{{ siz / 5 | number:'1.0-0'}}</mat-list-item>
+        <button mat-icon-button  color="accent" matTooltip="Info about the action" >
+          <mat-icon>help</mat-icon>
+        </button>
+      </mat-list>
+    </div>
 
     <!-- Dexterity -->
     <div class="alignhalf">
-    <mat-form-field class="example-full-width">
-      <mat-label>Dexterity</mat-label>
-      <span matPrefix>DEX &nbsp;</span>
-      <input type="tel" matInput placeholder="3D6 * 5">
-      <mat-icon matSuffix color="accent" (click)="$event">mode_edit</mat-icon>
-    </mat-form-field>
-    <mat-list role="list" class="alignhalf">
-      <mat-list-item role="listitem">Hard:</mat-list-item>
-      <mat-list-item role="listitem">Extreme:</mat-list-item>
-      <button mat-icon-button color="accent" aria-label="Example icon button with a vertical three dot icon" matTooltip="Info about the action">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </mat-list></div>
+      <mat-list role="list" class="alignhalf">
+        <mat-list-item role="Listitem">
+          <button mat-icon-button  color="accent" (click)="gendexterity()">
+            <mat-icon>casino</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item role="Listitem">
+          <mat-form-field class="example-full-width">
+            <mat-label>Dexterity</mat-label>
+            <span matPrefix>DEX &nbsp;</span>
+            <input type="number" matInput placeholder="3D6 * 5" value="{{dex}}" >
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item role="listitem">Hard:{{ dex / 2 | number:'1.0-0'}}</mat-list-item>
+        <mat-list-item role="listitem">Extreme:{{ dex / 5 | number:'1.0-0'}}</mat-list-item>
+        <button mat-icon-button  color="accent" matTooltip="Info about the action" >
+          <mat-icon>help</mat-icon>
+        </button>
+      </mat-list>
+    </div>
 
     <!-- Appearance -->
     <div class="alignhalf">
-    <mat-form-field class="example-full-width">
-      <mat-label>Appearance</mat-label>
-      <span matPrefix>APP &nbsp;</span>
-      <input type="tel" matInput placeholder="3D6 * 5">
-      <mat-icon matSuffix color="accent" (click)="$event">mode_edit</mat-icon>
-    </mat-form-field>
-    <mat-list role="list" class="alignhalf">
-      <mat-list-item role="listitem">Hard:</mat-list-item>
-      <mat-list-item role="listitem">Extreme:</mat-list-item>
-      <button mat-icon-button color="accent" aria-label="Example icon button with a vertical three dot icon" matTooltip="Info about the action">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </mat-list></div>
+      <mat-list role="list" class="alignhalf">
+        <mat-list-item role="Listitem">
+          <button mat-icon-button  color="accent" (click)="genappearance()">
+            <mat-icon>casino</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item role="Listitem">
+          <mat-form-field class="example-full-width">
+            <mat-label>Appearance</mat-label>
+            <span matPrefix>APP &nbsp;</span>
+            <input type="number" matInput placeholder="3D6 * 5" value="{{appearance}}" >
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item role="listitem">Hard:{{ appearance / 2 | number:'1.0-0'}}</mat-list-item>
+        <mat-list-item role="listitem">Extreme:{{ appearance / 5 | number:'1.0-0'}}</mat-list-item>
+        <button mat-icon-button  color="accent" matTooltip="Info about the action" >
+          <mat-icon>help</mat-icon>
+        </button>
+      </mat-list>
+    </div>
 
     <!-- Intelligence -->
     <div class="alignhalf">
-    <mat-form-field class="example-full-width">
-      <mat-label>Intelligence</mat-label>
-      <span matPrefix>INT &nbsp;</span>
-      <input type="tel" matInput placeholder="(2D6 + 6) * 5">
-      <mat-icon matSuffix color="accent" (click)="$event">mode_edit</mat-icon>
-    </mat-form-field>
-    <mat-list role="list" class="alignhalf">
-      <mat-list-item role="listitem">Hard:</mat-list-item>
-      <mat-list-item role="listitem">Extreme:</mat-list-item>
-      <button mat-icon-button color="accent" aria-label="Example icon button with a vertical three dot icon" matTooltip="Info about the action">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </mat-list></div>
+      <mat-list role="list" class="alignhalf">
+        <mat-list-item role="Listitem">
+          <button mat-icon-button  color="accent" (click)="genintelligence()">
+            <mat-icon>casino</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item role="Listitem">
+          <mat-form-field class="example-full-width">
+            <mat-label>Intelligence</mat-label>
+            <span matPrefix>INT &nbsp;</span>
+            <input type="number" matInput placeholder="(2D6 + 6) * 5" value="{{int}}" >
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item role="listitem">Hard:{{ int / 2 | number:'1.0-0'}}</mat-list-item>
+        <mat-list-item role="listitem">Extreme:{{ int / 5 | number:'1.0-0'}}</mat-list-item>
+        <button mat-icon-button  color="accent" matTooltip="Info about the action" >
+          <mat-icon>help</mat-icon>
+        </button>
+      </mat-list>
+    </div>
+
 
     <!-- Education -->
     <div class="alignhalf">
-    <mat-form-field class="example-full-width">
-      <mat-label>Education</mat-label>
-      <span matPrefix>EDU &nbsp;</span>
-      <input type="tel" matInput placeholder="(2D6 + 6) * 5">
-      <mat-icon matSuffix color="accent" (click)="$event">mode_edit</mat-icon>
-    </mat-form-field>
-    <mat-list role="list" class="alignhalf">
-      <mat-list-item role="listitem">Hard:</mat-list-item>
-      <mat-list-item role="listitem">Extreme:</mat-list-item>
-      <button mat-icon-button color="accent" aria-label="Example icon button with a vertical three dot icon" matTooltip="Info about the action">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </mat-list></div>
+      <mat-list role="list" class="alignhalf">
+        <mat-list-item role="Listitem">
+          <button mat-icon-button  color="accent" (click)="geneducation()">
+            <mat-icon>casino</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item role="Listitem">
+          <mat-form-field class="example-full-width">
+            <mat-label>Education</mat-label>
+            <span matPrefix>EDU &nbsp;</span>
+            <input type="number" matInput placeholder="(2D6 + 6) * 5" value="{{edu}}" >
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item role="listitem">Hard:{{ edu / 2 | number:'1.0-0'}}</mat-list-item>
+        <mat-list-item role="listitem">Extreme:{{ edu / 5 | number:'1.0-0'}}</mat-list-item>
+        <button mat-icon-button  color="accent" matTooltip="Info about the action" >
+          <mat-icon>help</mat-icon>
+        </button>
+      </mat-list>
+    </div>
 
     <!-- Power -->
     <div class="alignhalf">
-    <mat-form-field class="example-full-width">
-      <mat-label>Power</mat-label>
-      <span matPrefix>POW &nbsp;</span>
-      <input type="tel" matInput placeholder="3D6 * 5">
-      <mat-icon matSuffix color="accent" (click)="$event">mode_edit</mat-icon>
-    </mat-form-field>
-    <mat-list role="list" class="alignhalf">
-      <mat-list-item role="listitem">Hard:</mat-list-item>
-      <mat-list-item role="listitem">Extreme:</mat-list-item>
-      <button mat-icon-button color="accent" aria-label="Example icon button with a vertical three dot icon" matTooltip="Info about the action">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </mat-list></div>
+      <mat-list role="list" class="alignhalf">
+        <mat-list-item role="Listitem">
+          <button mat-icon-button  color="accent" (click)="genpower()">
+            <mat-icon>casino</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item role="Listitem">
+          <mat-form-field class="example-full-width">
+            <mat-label>Power</mat-label>
+            <span matPrefix>POW &nbsp;</span>
+            <input type="number" matInput placeholder="3D6 * 5" value="{{pow}}" >
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item role="listitem">Hard:{{ pow / 2 | number:'1.0-0'}}</mat-list-item>
+        <mat-list-item role="listitem">Extreme:{{ pow / 5 | number:'1.0-0'}}</mat-list-item>
+        <button mat-icon-button  color="accent" matTooltip="Info about the action" >
+          <mat-icon>help</mat-icon>
+        </button>
+      </mat-list>
+    </div>
+
 
     <!-- Luck -->
     <div class="alignhalf">
-    <mat-form-field class="example-full-width">
-      <mat-label>Luck</mat-label>
-      <span matPrefix>LUK &nbsp;</span>
-      <input type="tel" matInput placeholder="(2D6 +6) * 5">
-      <mat-icon matSuffix color="accent" (click)="$event">mode_edit</mat-icon>
-    </mat-form-field>
-    <mat-list role="list" class="alignhalf">
-      <mat-list-item role="listitem">Hard:</mat-list-item>
-      <mat-list-item role="listitem">Extreme:</mat-list-item>
-      <button mat-icon-button color="accent" aria-label="Example icon button with a vertical three dot icon" matTooltip="Info about the action">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </mat-list></div>
+      <mat-list role="list" class="alignhalf">
+        <mat-list-item role="Listitem">
+          <button mat-icon-button  color="accent" (click)="genluck()">
+            <mat-icon>casino</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item role="Listitem">
+          <mat-form-field class="example-full-width">
+            <mat-label>Luck</mat-label>
+            <span matPrefix>LUK &nbsp;</span>
+            <input type="number" matInput placeholder="(2D6 + 6) * 5" value="{{luk}}" >
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item role="listitem">Hard:{{ luk / 2 | number:'1.0-0'}}</mat-list-item>
+        <mat-list-item role="listitem">Extreme:{{ luk / 5 | number:'1.0-0'}}</mat-list-item>
+        <button mat-icon-button  color="accent" matTooltip="Info about the action" >
+          <mat-icon>help</mat-icon>
+        </button>
+      </mat-list>
+    </div>
+
 
   </form>
   </mat-card>
