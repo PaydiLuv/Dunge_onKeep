@@ -12,6 +12,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 
 
@@ -31,7 +33,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     FormsModule,
     MatInputModule,
     MatListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatStepperModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

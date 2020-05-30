@@ -14,3 +14,15 @@ mat-form-field span{
 mat-card-title{
   color: #64ffda;
 }
+
+.lineflex{
+  display : flex;
+  justify-content: center;
+}
+
+.columnflex .box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
